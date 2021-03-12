@@ -1,0 +1,287 @@
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (67.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (35.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCards (20210312085820)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "cards" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "card" varchar, "subsystem" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210312085820"]]
+  [1m[35m (101.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-03-12 08:59:12.710832"], ["updated_at", "2021-03-12 08:59:12.710832"]]
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 124.123.107.124 at 2021-03-12 09:00:06 +0000
+Cannot render console from 10.4.0.40! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.3ms | Allocations: 473)
+Completed 200 OK in 188ms (Views: 88.9ms | ActiveRecord: 0.0ms | Allocations: 2945)
+
+
+Started GET "/" for 124.123.107.124 at 2021-03-12 09:00:14 +0000
+Cannot render console from 10.4.0.40! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 18.9ms | Allocations: 185)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms | Allocations: 991)
+
+
+Started GET "/cards" for 124.123.107.124 at 2021-03-12 09:00:17 +0000
+Cannot render console from 10.4.0.40! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:15
+  Rendered cards/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1386)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /workspace/bihar/public/packs
+[Webpacker] Browserslist: caniuse-lite is outdated. Please run:
+npx browserslist@latest --update-db
+
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.43.0
+Time: 15200ms
+Built at: 03/12/2021 9:00:40 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 23321ms (Views: 23314.2ms | ActiveRecord: 0.6ms | Allocations: 22548)
+
+
+Started GET "/cards/new" for 124.123.107.124 at 2021-03-12 09:00:43 +0000
+Cannot render console from 10.4.0.40! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 98.8ms | Allocations: 6852)
+  Rendered cards/new.html.erb within layouts/application (Duration: 99.9ms | Allocations: 7207)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 117ms (Views: 105.0ms | ActiveRecord: 0.6ms | Allocations: 14594)
+
+
+Started POST "/cards" for 124.123.107.124 at 2021-03-12 09:00:49 +0000
+Cannot render console from 10.4.0.40! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"ArMuM16rbDna895E6jLazQF0vfsfOPGPfLFibbiRJUVV9vsjra9xE7BndGeEx8NgkNv6kUVXg3EfygTRhpIhGg==", "card"=>{"card"=>"1", "subsystem"=>"DL card"}, "commit"=>"Create Card"}
+HTTP Origin header (https://bihar-ifems.run-ap-south1.goorm.io) didn't match request.base_url (http://bihar-ifems.run-ap-south1.goorm.io)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 423)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.0.3.2) lib/action_controller/metal/request_forgery_protection.rb:215:in `handle_unverified_request'
+actionpack (6.0.3.2) lib/action_controller/metal/request_forgery_protection.rb:247:in `handle_unverified_request'
+actionpack (6.0.3.2) lib/action_controller/metal/request_forgery_protection.rb:242:in `verify_authenticity_token'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:200:in `block (2 levels) in halting'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:201:in `block in halting'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (71.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 124.123.107.124 at 2021-03-12 09:03:06 +0000
+Cannot render console from 10.4.0.40! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.1ms | Allocations: 308)
+Completed 200 OK in 18ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 2019)
+
+
+Started GET "/cards" for 124.123.107.124 at 2021-03-12 09:03:09 +0000
+Cannot render console from 10.4.0.40! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:15
+  Rendered cards/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1884)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 101ms (Views: 94.7ms | ActiveRecord: 1.2ms | Allocations: 10044)
+
+
+Started GET "/cards/new" for 124.123.107.124 at 2021-03-12 09:03:11 +0000
+Cannot render console from 10.4.0.40! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 83.8ms | Allocations: 2630)
+  Rendered cards/new.html.erb within layouts/application (Duration: 84.8ms | Allocations: 2986)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 167ms (Views: 107.3ms | ActiveRecord: 43.5ms | Allocations: 10455)
+
+
+Started POST "/cards" for 124.123.107.124 at 2021-03-12 09:03:21 +0000
+Cannot render console from 10.4.0.40! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"SQh9nsYNRpsP8Z511nDyKyHnV2j0CgRLHWhx3gXLvyQeTaiONQlbsWVlNFa4heuGsEgQAq5ldrV+ExdiO8i7ew==", "card"=>{"card"=>"2", "subsystem"=>"DL card"}, "commit"=>"Create Card"}
+HTTP Origin header (https://bihar-ifems.run-ap-south1.goorm.io) didn't match request.base_url (http://bihar-ifems.run-ap-south1.goorm.io)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:30:in `block in create'
+  [1m[36mCard Create (4.6ms)[0m  [1m[32mINSERT INTO "cards" ("card", "subsystem", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["card", "2"], ["subsystem", "DL card"], ["created_at", "2021-03-12 09:03:21.169804"], ["updated_at", "2021-03-12 09:03:21.169804"]]
+  ↳ app/controllers/cards_controller.rb:30:in `block in create'
+  [1m[35m (81.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:30:in `block in create'
+Redirected to http://bihar-ifems.run-ap-south1.goorm.io/cards/1
+Completed 302 Found in 93ms (ActiveRecord: 86.0ms | Allocations: 4287)
+
+
+Started GET "/cards/1" for 124.123.107.124 at 2021-03-12 09:03:21 +0000
+Cannot render console from 10.4.1.80! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:67:in `set_card'
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 256)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 5402)
+
+
+Started GET "/cards" for 124.123.107.124 at 2021-03-12 09:03:24 +0000
+Cannot render console from 10.4.1.80! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:15
+  Rendered cards/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 781)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 23.1ms | ActiveRecord: 0.1ms | Allocations: 4803)
+
+
+Started GET "/cards/new" for 124.123.107.124 at 2021-03-12 09:03:27 +0000
+Cannot render console from 10.4.1.80! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 20.7ms | Allocations: 710)
+  Rendered cards/new.html.erb within layouts/application (Duration: 29.3ms | Allocations: 803)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 92ms (Views: 90.7ms | ActiveRecord: 0.0ms | Allocations: 4837)
+
+
+Started POST "/cards" for 124.123.107.124 at 2021-03-12 09:03:31 +0000
+Cannot render console from 10.4.1.80! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"W5AtbpiyaagiuR50Lwm/BLqvedR4YXF5V66qsH9D+Z4M1fh+a7Z0gkgttFdB/KapKwA+viIOA4c01cwMQUD9wQ==", "card"=>{"card"=>"3001-A-00001", "subsystem"=>"qwer"}, "commit"=>"Create Card"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:30:in `block in create'
+  [1m[36mCard Create (2.5ms)[0m  [1m[32mINSERT INTO "cards" ("card", "subsystem", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["card", "3001-A-00001"], ["subsystem", "qwer"], ["created_at", "2021-03-12 09:03:31.942891"], ["updated_at", "2021-03-12 09:03:31.942891"]]
+  ↳ app/controllers/cards_controller.rb:30:in `block in create'
+  [1m[35m (98.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:30:in `block in create'
+Redirected to http://bihar-ifems.run-ap-south1.goorm.io/cards/2
+Completed 302 Found in 111ms (ActiveRecord: 100.5ms | Allocations: 4059)
+
+
+Started GET "/cards/2" for 124.123.107.124 at 2021-03-12 09:03:32 +0000
+Cannot render console from 10.4.1.80! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:67:in `set_card'
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 78)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 11.4ms | ActiveRecord: 0.2ms | Allocations: 4660)
+
+
+Started GET "/cards" for 124.123.107.124 at 2021-03-12 09:03:34 +0000
+Cannot render console from 10.4.1.80! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (40.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:15
+  Rendered cards/index.html.erb within layouts/application (Duration: 43.5ms | Allocations: 903)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 54ms (Views: 12.4ms | ActiveRecord: 40.5ms | Allocations: 4930)
+
+
+Started GET "/" for 124.123.107.124 at 2021-03-12 09:04:06 +0000
+Cannot render console from 10.4.1.80! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.3ms | Allocations: 184)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 961)
+
+
